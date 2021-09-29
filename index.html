@@ -29,7 +29,7 @@
             margin: auto;
         }
         header {
-            background-color: var(--cor2);
+            background-color: var(--cor3);
             height: 150px;
         }
         header > h1 {
@@ -99,7 +99,7 @@
     <main>
         <h2>Copiei e cole os dados aqui</h2>
         <p>Pode ser direto do bloco de notas, ou uma lista</p>
-        <label for="service">Digite a Service aqui: </label>
+        <label for="service">Digite os dados aqui: </label>
         <input type="text" id="service">
         <input type="button" value="Enviar" onclick="mandar()" id="botao">
     </main>
@@ -110,11 +110,13 @@
 
     <script>
 
-        const url13 = 'https://docs.google.com/forms/d/e/1FAIpQLSfFHW24G-yqNWvIZj09plLsuexXMuUU6mPiKm7X3LNMZ5Hp3Q/formResponse?ifq&entry.1110137686=cenoura&entry.2096807315='
+        const url13 = 'https://docs.google.com/forms/d/e/1FAIpQLSfFHW24G-yqNWvIZj09plLsuexXMuUU6mPiKm7X3LNMZ5Hp3Q/formResponse?ifq&entry.1110137686='
 
         function mandar(){
 
             const paula = new XMLHttpRequest()
+
+            
 
             let txt = document.querySelector('input#service')
             let texto = txt.value
@@ -126,7 +128,8 @@
 
             function envia(){
                 if(lista[i] != ''){
-                    paula.open('GET',url13+lista[i]) 
+                    let url10 = url13 + String(i) + '&entry.2096807315='
+                    paula.open('GET',url10+lista[i]) 
                     paula.send()
                     
                 }
@@ -141,7 +144,7 @@
 
 
 
-
+        
 
 
     </script>
